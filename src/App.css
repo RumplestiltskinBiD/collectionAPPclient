@@ -44,6 +44,7 @@
 
 
 }
+
 .password{
     background-color: #323235;
     width: 300px;
@@ -55,9 +56,35 @@
     margin-bottom: 50px;
     margin-top: 30px;
     margin: 0 auto;
-
 }
-.submit{
+
+.repeatPassword {
+    background-color: #323235;
+    width: 300px;
+    height: 40px;
+    display: block;
+    border-radius: 7px;
+    border-style: double;
+    border-color: lightgray;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    margin: 0 auto;
+}
+
+.registration_submit{
+    background-color: #0A84FF;
+    width: 300px;
+    height: 50px;
+    display: block;
+    border-style: double;
+    border-color: lightgray;
+    border-radius: 7px;
+    margin-top: 100px;
+    margin-bottom: 10px;
+    margin: 50px auto ;
+}
+
+.login_submit{
     background-color: #0A84FF;
     width: 300px;
     height: 50px;
@@ -71,6 +98,7 @@
 
 
 }
+
 .form-label{
     width: 100px;
     height: 20px;

@@ -20,7 +20,10 @@ i18n
                 translation: {
                     description: {
                         part1: 'Registration',
-                        part2: 'Registration'
+                        part2: 'Language',
+                        part3: 'Login',
+                        part4: 'Password',
+                        part5: 'Repeat password'
                     }
                 }
             },
@@ -28,7 +31,10 @@ i18n
                 translation: {
                     description: {
                         part1: 'Регистрация',
-                        part2: 'Регистрация'
+                        part2: 'Язык',
+                        part3: 'Вход',
+                        part4: 'Пароль',
+                        part5: 'Повторите пароль'
                     }
                 }
             }
