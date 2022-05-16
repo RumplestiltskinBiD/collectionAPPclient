@@ -1,1 +1,1 @@
-export const API_URL = "https://thawing-oasis-22505.herokuapp.com/"
+export const API_URL = "https://floating-woodland-21294.herokuapp.com/"
