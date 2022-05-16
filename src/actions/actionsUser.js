@@ -1,10 +1,11 @@
 import axios from "axios";
 import {deleteUserAction, setUser, setUsers} from "../reducers/userReducer";
 import {hideLoader, showLoader} from "../reducers/appReducer";
+import {API_URL} from "../config";
 
 export const registration = async (email, password) => {
     try {
-        const response = await axios.post("http://localhost:5000/api/auth/registration", {
+        const response = await axios.post(`${API_URL}api/auth/registration`, {
             email,
             password
         })
@@ -18,7 +19,7 @@ export const registration = async (email, password) => {
 export const login = (email, password) => {
     return async dispatch => {
         try {
-            const response = await axios.post("http://localhost:5000/api/auth/login", {
+            const response = await axios.post(`${API_URL}api/auth/login`, {
                 email,
                 password
             })
@@ -33,7 +34,7 @@ export const login = (email, password) => {
 export const auth = () => {
     return async dispatch => {
         try {
-            const response = await axios.get("http://localhost:5000/api/auth/auth",
+            const response = await axios.get(`${API_URL}api/auth/auth`,
                 {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}}
                 )
             dispatch(setUser(response.data.user))
@@ -48,7 +49,7 @@ export function getAllUsers() {
     return async dispatch => {
         try {
             dispatch(showLoader())
-            const response = await axios.get(`http://localhost:5000/api/users`, {
+            const response = await axios.get(`${API_URL}api/users`, {
                 headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
             })
             dispatch(setUsers(response.data))
@@ -63,7 +64,7 @@ export function getAllUsers() {
 export function deleteUser(user) {
     return async dispatch => {
         try {
-            const response = await axios.delete(`http://localhost:5000/api/users?id=${user._id}`, {
+            const response = await axios.delete(`${API_URL}api/users?id=${user._id}`, {
                 headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
             })
             dispatch(deleteUserAction(user._id))
