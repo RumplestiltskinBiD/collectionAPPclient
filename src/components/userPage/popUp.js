@@ -3,6 +3,8 @@ import InputControlled from "../../inputs/inputs";
 import {useDispatch, useSelector} from "react-redux";
 import {setPopupDisplay} from "../../reducers/collectionReducer";
 import {createCollection} from "../../actions/actionsItem";
+import "./popUpStyle.css"
+import Closeicon from "../../imageLogo/Closeicon.svg"
 
 const PopUp = () => {
     const [colName, setColName] = useState('')
@@ -21,7 +23,7 @@ const PopUp = () => {
             <div className="popup-content" onClick={(event => event.stopPropagation())}>
                 <div className="popup-header">
                     <div className="popup-title">Create new Collection</div>
-                    <button className="popup-close" onClick={() => dispatch(setPopupDisplay('none'))}>X</button>
+                    <button className="popup-close" onClick={() => dispatch(setPopupDisplay('none'))}><img src={Closeicon} alt=''/></button>
                 </div>
                 <InputControlled type="text" placeholder="Enter collection name" value={colName} setValue={setColName}/>
                 <button className="popup-create" onClick={() => createHandler()}>Create</button>

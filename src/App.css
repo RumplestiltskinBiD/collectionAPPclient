@@ -1,111 +1,76 @@
-
-.form-control me-2{
-    background-color: white;
-    width: 500px;
-    height: 40px;
-    border-radius: 7px;
-    border-style: double;
-    border-color: lightgray;
-    margin: center;
-
-}
-.btn-outline-success{
-    background-color: white;
-    width: 80px;
-    height: 40px;
-    border-radius: 7px;
-    border-style: double;
-    border-color: lightgray;
-
-   }
-
 .content{
-    font-size: 24px;
-    font-family: monospace;
+    font-size: 46px;
+    color: #f5f5f5;
     margin: 0 auto;
-    width: 300px;
+    margin-top: 60px;
+    margin-bottom: 100px;
+    width: 200px;
     height: 40px;
-    display: block;
-    margin-bottom: 10px;
-
-
-}
-.email{
-    background-color: #323235;
-    width: 300px;
-    height: 40px;
-    display: block;
-    border-radius: 7px;
-    border-style: double;
-    border-color: lightgray;
-    margin-bottom: 50px;
-    margin-top: 30px;
-    margin: 0 auto;
-
-
 }
 
-.password{
-    background-color: #323235;
+.iinput{
     width: 300px;
     height: 40px;
     display: block;
-    border-radius: 7px;
-    border-style: double;
-    border-color: lightgray;
-    margin-bottom: 50px;
-    margin-top: 30px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    border-radius: 5px;
+    background-color: #212121;
+    border: 1px solid;
+    border-color: #2C2C2C;
+    text-align: justify;
+    padding-left: 10px;
 }
 
-.repeatPassword {
-    background-color: #323235;
-    width: 300px;
-    height: 40px;
-    display: block;
-    border-radius: 7px;
-    border-style: double;
-    border-color: lightgray;
-    margin-bottom: 50px;
-    margin-top: 30px;
-    margin: 0 auto;
+.iinput:hover{
+    background-color: transparent;
+    color: #f5f5f5;
+    border-color: #f5f5f5;
+}
+
+.iinput:focus{
+    background-color: transparent;
+    color: #f5f5f5;
+    border-color: #f5f5f5;
 }
 
 .registration_submit{
-    background-color: #0A84FF;
+    background-color: transparent;
     width: 300px;
     height: 50px;
     display: block;
-    border-style: double;
-    border-color: lightgray;
-    border-radius: 7px;
-    margin-top: 100px;
-    margin-bottom: 10px;
-    margin: 50px auto ;
+    color: #686868;
+    border-color: #f5f5f5;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+.registration_submit:hover {
+    background-color: #f5f5f5;
+    border-color: #f5f5f5;
+    color: #212121;
+    box-shadow: none;
 }
 
 .login_submit{
-    background-color: #0A84FF;
+    background-color: transparent;
     width: 300px;
     height: 50px;
     display: block;
-    border-style: double;
-    border-color: lightgray;
-    border-radius: 7px;
-    margin-top: 100px;
-    margin-bottom: 10px;
-    margin: 50px auto ;
-
-
+    color: #686868;
+    border-color: #f5f5f5;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
 }
 
-.form-label{
-    width: 100px;
-    height: 20px;
-    border-radius: 7px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin: 7px  ;
-    margin-left: 650px;
-
+.login_submit:hover {
+    background-color: #f5f5f5;
+    border-color: #f5f5f5;
+    color: #212121;
+    box-shadow: none;
 }

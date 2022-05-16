@@ -1,7 +1,6 @@
 import axios from "axios";
 import {deleteUserAction, setUser, setUsers} from "../reducers/userReducer";
 import {hideLoader, showLoader} from "../reducers/appReducer";
-import {deleteItemAction} from "../reducers/collectionReducer";
 
 export const registration = async (email, password) => {
     try {
@@ -53,9 +52,6 @@ export function getAllUsers() {
                 headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
             })
             dispatch(setUsers(response.data))
-
-
-            console.log(response.data)
         } catch (e) {
             alert(e.response.data.message)
         } finally {
@@ -67,11 +63,9 @@ export function getAllUsers() {
 export function deleteUser(user) {
     return async dispatch => {
         try {
-            console.log(user._id)
             const response = await axios.delete(`http://localhost:5000/api/users?id=${user._id}`, {
                 headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
             })
-
             dispatch(deleteUserAction(user._id))
             alert(response.data.message)
         } catch (e) {

@@ -6,9 +6,8 @@ import PopUp from "./popUp";
 import './userPageStyle.css'
 import {setCurrentCollection, setPopupDisplay} from "../../reducers/collectionReducer";
 
-
-
 const UserPage = () => {
+
     const dispatch = useDispatch()
     const currentCollection = useSelector(state => state.collection.currentCollection)
     const collectionStack = useSelector(state => state.collection.collectionStack)
@@ -18,7 +17,6 @@ const UserPage = () => {
     useEffect(() => {
 
         dispatch(getItems(currentCollection))
-        console.log("asdf" + currentCollection)
     }, [currentCollection])
 
     function showPopupHandler() {
@@ -71,24 +69,25 @@ const UserPage = () => {
 
     return ( !dragEnter ?
 
-        <div className="user" onDragEnter={dragEnterHandler} onDragLeave={dragLeaveHandler} onDragOver={dragEnterHandler}>
-            <div className="user-btn">
-                {currentCollection ?<button className="user-btn" onClick={() => backClickHandler()}>Back</button> : null}
-                {!currentCollection ? <button className="user-btn" onClick={() => showPopupHandler()}>Create collection</button> : null}
-                <div className="user-upload">
-                    <label htmlFor="user-upload-input" className="user-upload-label">Download</label>
-                    <input
-                        multiple={true}
-                        onChange={(event) =>
-                            itemUploadHandler(event)}
-                        type="file" id="user-upload-input"
-                        className="user-upload-input"
-                    />
+            <div className="user" onDragEnter={dragEnterHandler} onDragLeave={dragLeaveHandler} onDragOver={dragEnterHandler}>
+                <ItemsList />
+                <div className="user-btn">
+                    {!currentCollection ? <button className="btn-create-collection"
+                                                  onClick={() => showPopupHandler()}>Create new collection</button> : null}
+                    <div className="user-upload">
+                        {currentCollection ?<label htmlFor="user-upload-input" className="user-upload-label">Download</label> : null}
+                        <input
+                            multiple={true}
+                            onChange={(event) =>
+                                itemUploadHandler(event)}
+                            type="file" id="user-upload-input"
+                            className="user-upload-input"
+                        />
+                    </div>
+                    {currentCollection ?<button className="btn-back" onClick={() => backClickHandler()}>Back</button> : null}
                 </div>
+                <PopUp />
             </div>
-            <ItemsList />
-            <PopUp />
-        </div>
             :
         <div className="drop-area" onDrop={dropHandler} onDragEnter={dragEnterHandler} onDragLeave={dragLeaveHandler} onDragOver={dragEnterHandler}>
             Drop files here

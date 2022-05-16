@@ -1,9 +1,9 @@
 import React from 'react';
 import "../adminPageCss.css"
-import {deleteItem} from "../../../actions/actionsItem";
 import {useDispatch} from "react-redux";
 import {deleteUser} from "../../../actions/actionsUser";
-/*onClick={(e) => deleteClickHandler(e)}*/
+import "../adminPageCss.css"
+
 const SingleUser = ({user}) => {
     const dispatch = useDispatch()
     function deleteClickHandler(e) {
@@ -12,11 +12,10 @@ const SingleUser = ({user}) => {
         dispatch(deleteUser(user))
     }
     return (
-        <div className="user">
-            <p>User</p>
-            <div className="item-name">{user._id}</div>
-            <div className="item-name">{user.email}</div>
-            <div className="item-name">{user.roles}</div>
+        <div className="suser">
+            <div className="item-admin">ID: {user._id}</div>
+            <div className="item-admin">Email: {user.email}</div>
+            <div className="item-admin">Role: {user.roles}</div>
             <button onClick={(e) => deleteClickHandler(e)} className="item_btn_delete">Delete</button>
         </div>
     );

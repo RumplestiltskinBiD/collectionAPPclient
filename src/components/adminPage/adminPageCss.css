@@ -1,11 +1,24 @@
-.user-list {
-    border: 8px solid #323235;
+.admin-header{
+    font-size: 30px;
+    margin-left: 40px;
+    margin-top: 40px;
+    color: #f5f5f5;
 }
 
-.user {
-    border: 4px groove #323235;
+.suser{
+    width: 300px;
+    height: 200px;
+    display: inline-block;
+    background-color: #181818;
+    border-radius: 5px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 40px;
+    font-size: 16px;
+    color: #686868;
 }
 
-.item-name {
-
+.item-admin{
+    margin-left: 20px;
+    margin-top: 20px;
 }

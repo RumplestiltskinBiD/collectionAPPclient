@@ -24,7 +24,6 @@ export function getAllItems(collId) {
             dispatch(showLoader())
             const response = await axios.get(`http://localhost:5000/api/auth/allitems${collId ? '?parent=' + collId : ''}`)
             dispatch(setItems(response.data))
-            /*console.log(response.data)*/
         } catch (e) {
             alert(e.response.data.message)
         } finally {
@@ -84,13 +83,11 @@ export function deleteItem(item) {
         }
     }
 }
-    export function searchItems(search) {
+
+export function searchItems(search) {
         return async dispatch => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/items/search?search=${search}`/*, {
-                    headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
-                }*/)
-                console.log(response.data)
+                const response = await axios.get(`http://localhost:5000/api/items/search?search=${search}`)
                 dispatch(setItems(response.data))
             } catch (e) {
                 alert(e.response.data.message)
@@ -100,23 +97,5 @@ export function deleteItem(item) {
         }
     }
 
-/*export function getAllUsers() {
-    return async dispatch => {
-        try {
-            dispatch(showLoader())
-            const response = await axios.get(`http://localhost:5000/api/auth/adminpage`, {
-                headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
-            })
-            dispatch(setItems(response.data))
-
-            /!*dispatch((response.data))*!/
-            console.log(response.data)
-        } catch (e) {
-            alert(e.response.data.message)
-        } finally {
-            dispatch(hideLoader())
-        }
-    }
-}*/
 
 

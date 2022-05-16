@@ -1,28 +1,22 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {getAllItems} from "../../actions/actionsItem";
 import UsersList from "./userList/usersList";
 import {getAllUsers} from "../../actions/actionsUser";
+import "./adminPageCss.css"
 
 const AdminPage = () => {
     const dispatch = useDispatch()
-    const allItems = useSelector(state => state.collection.currentCollection)
-    const collectionStack = useSelector(state => state.collection.collectionStack)
+    const allOfUsers = useSelector(state => state.collection.currentCollection)
 
     useEffect(() => {
-        dispatch(getAllUsers(allItems))
-        /*console.log(allItems + " !!")
-        console.log(allItems.length)*/
-    }, [allItems])
+        dispatch(getAllUsers(allOfUsers))
+    }, [allOfUsers])
 
     return (
         <div>
-            <div className="header">
-                AdminPage
+            <div className="admin-header">
                 <p>List of users:</p>
             </div>
-
-
             <UsersList />
         </div>
     );

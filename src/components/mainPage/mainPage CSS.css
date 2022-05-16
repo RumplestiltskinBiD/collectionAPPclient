@@ -1,0 +1,22 @@
+.item{
+    display: inline-block;
+}
+
+.p{
+    font-size: 30px;
+    margin-left: 40px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.itemlist-header{
+    font-size: 40px;
+    margin-left: 40px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.item-img{
+    width: 200px;
+    height: 200px;
+}

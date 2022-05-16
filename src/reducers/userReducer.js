@@ -6,8 +6,8 @@ const DELETE_USER = "DELETE_USER"
 const defaultState = {
     users: [],
     currentUser: {},
-    isAuth: false
-
+    isAuth: false,
+    userRoles: []
 }
 
 export default function userReducer(state = defaultState, action) {
@@ -16,14 +16,16 @@ export default function userReducer(state = defaultState, action) {
             return {
                 ...state,
                 currentUser: action.payload.user,
-                isAuth: true
+                isAuth: true,
+                userRoles: action.payload.role
             }
         case LOGOUT:
             localStorage.removeItem('token')
             return {
                 ...state,
                 currentUser: {},
-                isAuth: false
+                isAuth: false,
+                userRoles: ''
             }
         case SET_USERS: return {...state, users: action.payload}
         case DELETE_USER: return {...state, users: [...state.users.filter(user => user._id !== action.payload)]}

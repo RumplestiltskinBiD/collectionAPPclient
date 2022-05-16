@@ -1,27 +1,31 @@
 import React from 'react';
 import Table from "react-bootstrap/Table";
 import {useSelector} from "react-redux";
-import Item from "../userPage/userItems/item/item";
 import ItemAll from "./itemAll/itemAll";
+import '../userPage/userPageStyle.css'
+import {useTranslation} from "react-i18next";
 
 const ItemsAllList = () => {
-    const items = useSelector(state => state.collection.items).map(item => <ItemAll key={item._id} item={item} />)
-    /*const items = [{_id: 1, name: 'first', type: 'collection', date: '02.02.2022'},
-        {_id: 2, name: 'second', type: 'collection', date: '02.02.2022'}].map(item => <Item key={item._id} item={item} />)*/
+    const { t } = useTranslation();
+    const items = useSelector(state => state.collection.items)
+    const onlyLastItems = items.filter(i => i.type !== 'collection').slice(-5, items.length).map(item => <ItemAll key={item._id} item={item} />)
+    const biggestCollections = items.filter(i => i.type === 'collection')
+        .sort((a, b) => a.childs - b.childs).slice(-5, items.length)
+        .map(item => <ItemAll key={item._id} item={item} />)
+
     if (items.length === 0) {
         return (
-            <div className="loader">Items not founded</div>
+            <div className="loader">{t('description.part13')}</div>
         )
     }
+
     return (
-        <Table striped bordered hover size="sm" variant="dark">
+        <Table striped bordered hover size="sm">
             <div className="itemlist">
-                <div className="itemlist-header">
-                    <div className="itemlist-name">Name</div>
-                    <div className="itemlist-date">Date</div>
-                    <div className="itemlist-number">Number</div>
-                </div>
-                {items}
+                <h1 className="p">{t('description.part7')}</h1>
+                {onlyLastItems}
+                <h1 className="p">{t('description.part8')}</h1>
+                {biggestCollections}
             </div>
         </Table>
     );
