@@ -37,7 +37,8 @@ i18n
                         part15: 'My items',
                         part16: 'Admin page',
                         part17: 'Log out',
-                        part18: 'My page'
+                        part18: 'My page',
+                        part19: 'List of users'
                     }
                 }
             },
@@ -61,7 +62,8 @@ i18n
                         part15: 'Мои айтемы',
                         part16: 'Админка',
                         part17: 'Выйти',
-                        part18: 'Моя страница'
+                        part18: 'Моя страница',
+                        part19: 'Список пользователей'
 
 
                     }

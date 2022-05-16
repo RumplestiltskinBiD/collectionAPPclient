@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import UsersList from "./userList/usersList";
 import {getAllUsers} from "../../actions/actionsUser";
 import "./adminPageCss.css"
+import {t} from "i18next";
 
 const AdminPage = () => {
     const dispatch = useDispatch()
@@ -15,7 +16,7 @@ const AdminPage = () => {
     return (
         <div>
             <div className="admin-header">
-                <p>List of users:</p>
+                <p>{t('description.part19')}:</p>
             </div>
             <UsersList />
         </div>
